@@ -65,7 +65,7 @@ public final class Pcaps {
 
       Pointer alldevsp = alldevsPP.getValue();
       if (alldevsp == null) {
-        logger.info("No NIF was found.");
+        logger.debug("No NIF was found.");
         return Collections.<PcapNetworkInterface>emptyList();
       }
 
@@ -78,7 +78,7 @@ public final class Pcaps {
       NativeMappings.pcap_freealldevs(pcapIf.getPointer());
     }
 
-    logger.info("{} NIF(s) found.", ifList.size());
+    logger.debug("{} NIF(s) found.", ifList.size());
     return ifList;
   }
 
