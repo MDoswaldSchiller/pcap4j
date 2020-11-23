@@ -52,7 +52,7 @@ public final class EtherType extends NamedNumber<Short, EtherType> {
 
   /** MPLS: 0x8847 */
   public static final EtherType MPLS = new EtherType((short) 0x8847, "MPLS");
-
+  
   /** PPPoE Discovery Stage: 0x8863 */
   public static final EtherType PPPOE_DISCOVERY_STAGE =
       new EtherType((short) 0x8863, "PPPoE Discovery Stage");
@@ -61,6 +61,12 @@ public final class EtherType extends NamedNumber<Short, EtherType> {
   public static final EtherType PPPOE_SESSION_STAGE =
       new EtherType((short) 0x8864, "PPPoE Session Stage");
 
+  /** EAP over LAN (IEEE 802.1X) */
+  public static final EtherType IEEE802_1X = new EtherType((short) 0x888e, "802.1X");
+  
+  /** Pre-Authentication (IEEE 802.11i) */
+  public static final EtherType IEEE802_11I = new EtherType((short) 0x88C7, "802.11i");
+  
   private static final Map<Short, EtherType> registry = new HashMap<Short, EtherType>();
 
   static {
@@ -74,6 +80,8 @@ public final class EtherType extends NamedNumber<Short, EtherType> {
     registry.put(MPLS.value(), MPLS);
     registry.put(PPPOE_DISCOVERY_STAGE.value(), PPPOE_DISCOVERY_STAGE);
     registry.put(PPPOE_SESSION_STAGE.value(), PPPOE_SESSION_STAGE);
+    registry.put(IEEE802_1X.value(), IEEE802_1X);
+    registry.put(IEEE802_11I.value(), IEEE802_11I);
   }
 
   /**

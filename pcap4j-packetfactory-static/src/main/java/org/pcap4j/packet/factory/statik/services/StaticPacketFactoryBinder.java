@@ -30,6 +30,7 @@ import org.pcap4j.packet.factory.statik.StaticDnsRDataFactory;
 import org.pcap4j.packet.factory.statik.StaticDot11FrameTypePacketFactory;
 import org.pcap4j.packet.factory.statik.StaticEtherTypePacketFactory;
 import org.pcap4j.packet.factory.statik.StaticGtpV1ExtensionPacketFactory;
+import org.pcap4j.packet.factory.statik.StaticIEEE8021TypePacketFactory;
 import org.pcap4j.packet.factory.statik.StaticIcmpV4TypePacketFactory;
 import org.pcap4j.packet.factory.statik.StaticIcmpV6TypePacketFactory;
 import org.pcap4j.packet.factory.statik.StaticIpNumberPacketFactory;
@@ -55,6 +56,7 @@ import org.pcap4j.packet.namednumber.DataLinkType;
 import org.pcap4j.packet.namednumber.Dot11FrameType;
 import org.pcap4j.packet.namednumber.EtherType;
 import org.pcap4j.packet.namednumber.GtpV1ExtensionHeaderType;
+import org.pcap4j.packet.namednumber.IEEE8021Type;
 import org.pcap4j.packet.namednumber.IcmpV4Type;
 import org.pcap4j.packet.namednumber.IcmpV6Type;
 import org.pcap4j.packet.namednumber.IpNumber;
@@ -83,6 +85,7 @@ final class StaticPacketFactoryBinder implements PacketFactoryBinder {
   private StaticPacketFactoryBinder() {
     packetFactories.put(DataLinkType.class, StaticDataLinkTypePacketFactory.getInstance());
     packetFactories.put(EtherType.class, StaticEtherTypePacketFactory.getInstance());
+    packetFactories.put(IEEE8021Type.class, StaticIEEE8021TypePacketFactory.getInstance());
     packetFactories.put(LlcNumber.class, StaticLlcNumberPacketFactory.getInstance());
     packetFactories.put(IcmpV4Type.class, StaticIcmpV4TypePacketFactory.getInstance());
     packetFactories.put(IcmpV6Type.class, StaticIcmpV6TypePacketFactory.getInstance());

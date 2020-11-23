@@ -9,6 +9,7 @@ package org.pcap4j.packet.factory.statik;
 
 import org.pcap4j.packet.ArpPacket;
 import org.pcap4j.packet.Dot1qVlanTagPacket;
+import org.pcap4j.packet.IEEE8021XPacket;
 import org.pcap4j.packet.IllegalPacket;
 import org.pcap4j.packet.IllegalRawDataException;
 import org.pcap4j.packet.IpV4Packet;
@@ -80,6 +81,22 @@ public final class StaticEtherTypePacketFactory extends AbstractStaticPacketFact
           @Override
           public Class<IpV6Packet> getTargetClass() {
             return IpV6Packet.class;
+          }
+        });
+    instantiaters.put(
+        EtherType.IEEE802_1X,
+        new PacketInstantiater()
+        {
+          @Override
+          public Packet newInstance(byte[] rawData, int offset, int length) throws IllegalRawDataException
+          {
+            return IEEE8021XPacket.newPacket(rawData, offset, length);
+          }
+
+          @Override
+          public Class<? extends Packet> getTargetClass()
+          {
+            return IEEE8021XPacket.class;
           }
         });
   }
