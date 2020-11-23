@@ -1268,7 +1268,7 @@ public final class PcapHandle implements Closeable {
     }
 
     NativeMappings.pcap_close(handle);
-    logger.info("Closed.");
+    logger.debug("Closed.");
   }
 
   @Override

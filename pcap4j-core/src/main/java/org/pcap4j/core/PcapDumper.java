@@ -208,6 +208,6 @@ public final class PcapDumper implements Closeable {
     }
 
     NativeMappings.pcap_dump_close(dumper);
-    logger.info("Closed.");
+    logger.debug("Closed.");
   }
 }
